@@ -25,9 +25,9 @@ namespace CQRSButDifferent.OrderEndpoint
                 //sum(delta) here to determine if there is enough quantity of the product in to place the order
                 var productQuantity = context.ProductQuantity.Where(x => x.ProductId == message.ProductId).Sum(x => x.Delta);
 
-                if ((productQuantity - 10) < message.Quantity)
-                    Log.Warn("We have less than 10 of product 1 remaining. Please resupply the vendor.");
-
+                if ((productQuantity - 20) < message.Quantity)
+                    Log.Warn("We have less than 20 of product 1 remaining. Please resupply the vendor. Sending ResupplyVendor");
+                
                 if (productQuantity < message.Quantity)
                 {
                     //don't allow the order to proceed, publish InsuffcientProductQuantityForOrder
