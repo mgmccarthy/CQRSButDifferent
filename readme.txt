@@ -17,6 +17,3 @@ How to run the project:
 			- the NSB console shows the WARN message and publishes InsuffcientProductQuantityForOrder
 			ELSE
 			- writes the negated order's quantity to ProductQuantity
-
-TODO:
-	- find a way to create an injectable logger you can use across endpoints
