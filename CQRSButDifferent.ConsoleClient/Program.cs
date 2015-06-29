@@ -10,7 +10,7 @@ namespace CQRSButDifferent.ConsoleClient
         {
             ServiceBus.Init();
 
-            Console.WriteLine("Press 'Enter' to start placing ordrers. To exit, Ctrl + C");
+            Console.WriteLine("Press 'Enter' to start placing orders. To exit, Ctrl + C");
 
             while (Console.ReadLine() != null)
             {

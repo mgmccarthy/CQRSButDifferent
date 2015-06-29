@@ -17,7 +17,7 @@ namespace CQRSButDifferent.SnapshotEndpoint
 
         public void Start()
         {
-            schedule.Every(TimeSpan.FromMinutes(1), () => bus.SendLocal(new CreateSnapshotForProductQuantity()));
+            schedule.Every(TimeSpan.FromMinutes(1), () => bus.SendLocal(new CreateSnapshotOfProductQuantity()));
         }
 
         public void Stop()

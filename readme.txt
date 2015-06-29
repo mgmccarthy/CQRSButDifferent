@@ -19,4 +19,4 @@ How to run the project:
 			- writes the negated order's quantity to ProductQuantity
 
 TODO:
-	- implement the snapshot endpoint
+	- find a way to create an injectable logger you can use across endpoints

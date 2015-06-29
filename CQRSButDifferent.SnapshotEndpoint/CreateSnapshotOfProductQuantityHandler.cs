@@ -3,20 +3,15 @@ using System.Linq;
 using CQRSButDifferent.Data;
 using CQRSButDifferent.Messages.Commands;
 using NServiceBus;
-using NServiceBus.Logging;
 
 namespace CQRSButDifferent.SnapshotEndpoint
 {
-    public class CreateSnapshotForProductQuantityHandler : IHandleMessages<CreateSnapshotForProductQuantity>
+    public class CreateSnapshotOfProductQuantityHandler : IHandleMessages<CreateSnapshotOfProductQuantity>
     {
-        private static readonly ILog Log = LogManager.GetLogger(typeof(CreateSnapshotForProductQuantityHandler));
-
-        public void Handle(CreateSnapshotForProductQuantity message)
+        public void Handle(CreateSnapshotOfProductQuantity message)
         {
             using (var context = new CqrsButDifferentContext())
             {
-                Log.Warn("Creating snapshot.");
-
                 //stamp out "one minute ago"
                 var oneMinuteAgo = DateTime.Now.AddMinutes(-1);
 
@@ -30,7 +25,7 @@ namespace CQRSButDifferent.SnapshotEndpoint
                 context.ProductQuantity.Add(new ProductQuantity { ProductId = 1, Delta = productQuantity, TimeStamp = DateTime.Now });
 
                 context.SaveChanges();
-                Log.Warn("Snapshot Created.");
+                Console.WriteLine("Snapshot Created.");
             }
         }
     }

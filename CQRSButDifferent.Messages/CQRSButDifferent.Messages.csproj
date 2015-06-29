@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\CreateSnapshotForProductQuantity.cs" />
+    <Compile Include="Commands\CreateSnapshotOfProductQuantity.cs" />
     <Compile Include="Commands\PlaceOrder.cs" />
     <Compile Include="Commands\ResupplyVendor.cs" />
     <Compile Include="Events\InsuffcientProductQuantityForOrder.cs" />
